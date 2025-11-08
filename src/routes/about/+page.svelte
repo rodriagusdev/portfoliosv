@@ -1,13 +1,3 @@
-<script>
-	import { onMount } from 'svelte';
-	import { cognitiveDissabilityMode } from '../../store';
-	import { addBordersForCognitive } from '../components/AccessibilityMenu/cognitiveDissabilityMode';
-
-	onMount(() => {
-		if ($cognitiveDissabilityMode === true) addBordersForCognitive($cognitiveDissabilityMode);
-	});
-</script>
-
 <svelte:head>
 	<title>rodriccrz</title>
 	<meta
@@ -17,66 +7,65 @@
 </svelte:head>
 
 <section class="w-full md:projectAnim min-h-screen sm:mb-40 xl:mb-20">
-	<div class="w-[95%] px-5 m-auto mt-36 border-l border-l-slate-200">
-		<h1
-			class="hidden md:block mb-20 text-2xl sm:text-3xl md:text-4xl lg:text-4xl w-[40%] absolute right-[-10%] top-[50%] text-center lg:text-center border-b border-b-slate-200 rotate-90 text-slate-200"
-		>
-			ABOUT.md
-		</h1>
+	<div class="w-[95%] px-5 m-auto mt-36 border-l-2 border-l-cyber-purple">
+		<h2 class="pagename">ABOUT.md</h2>
 
-		<div class="flex flex-col gap-10 items-center w-full sm:w-[40%] m-auto">
-			<h2
-				class="h-auto text-xl sm:text-2xl md:text-3xl lg:text-4xl w-full text-left text-slate-200"
-			>
-				rodriccrz@gmail.com
-			</h2>
+		<div class="flex flex-col gap-10 items-center sm:w-[50%] m-auto">
+			<h1 class="h-auto">rodriccrz@gmail.com</h1>
+
+			<div class="link-card">
+				<a aria-label="To github profile" href="https://github.com/rodriagusdev" target="_blank">
+					Github
+				</a>
+
+				<span class="divider" />
+
+				<a
+					aria-label="To Linkedin profile"
+					href="https://www.linkedin.com/in/rodrigoagustinccrz/"
+					target="_blank"
+				>
+					Linkedin
+				</a>
+
+				<span class="divider" />
+				
+				<a aria-label="To Resume PDF" href="/resume" target="_blank"> Resume </a>
+			</div>
 
 			<div class="flex flex-col gap-5 w-full">
 				<div class="flex flex-col gap-2">
-					<h3 class="text-slate-300 text-base">Education</h3>
+					<h3>Education</h3>
 
-					<ul class="text-sm list-none p-0">
-						<li>Computer technician (2011 - 2017): E.E.S.T.N°5.</li>
-						<li id="projects">React JS (2021 - 2022): Coderhouse.</li>
+					<ul class="list-none p-0">
+						<li>Computer Technician (2011 - 2017): E.E.S.T.N°5.</li>
+						<li>System Analyst (2023 - 2026) DIPREGEP N°6169.</li>
 					</ul>
 				</div>
 
 				<div class="flex flex-col gap-2">
-					<h3 class="text-slate-300 text-base">Languages</h3>
+					<h3>Languages</h3>
 
-					<ul class="text-sm list-none p-0">
+					<ul class="list-none p-0">
 						<li>Spanish</li>
 						<li>English</li>
 					</ul>
 				</div>
 
-				<div class="flex flex-col gap-2">
-					<h3 class="text-slate-300 text-base">Technologies and tools used in my projects</h3>
-
-					<p class="text-sm">
-						Main: <span class="text-teal-500">Svelte | React | Typescript | TailwindCSS | Zustand</span>
-					</p>
-
-					<p class="text-sm">
-						Also used:<br />
-						<span class="text-teal-500"
-							>JS | NextJS <br />
-							Vanilla CSS | SASS | <br />
-							Redux | React Context <br />
-							MongoDB | Prisma | Express<br />
-							Github</span
-						>
-					</p>
-				</div>
-
 				<div class="flex flex-col gap-2 pb-40 sm:pb-0">
-					<h3 class="text-slate-300 text-base">Extra information</h3>
+					<h3 class=" text-base">A bit of myself</h3>
 
-					<p class="text-sm">
-						I finished as a Computer Technician, but did not do anything programming-related for
-						some years.<br /> I started again in 2022 and I am looking forward to learning new technologies
-						as time goes.
+					<p>
+						I develop modern web and desktop applications using React, TypeScript, .NET (C#), and
+						MySQL.
 					</p>
+
+					<p>
+						My experience includes making responsive websites which load fast for the client, and
+						scalable applications applying POO principles.
+					</p>
+
+					<p>I don't have a preference, I am both comfortable working in front and back.</p>
 				</div>
 			</div>
 		</div>

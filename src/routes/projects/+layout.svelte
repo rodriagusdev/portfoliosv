@@ -7,19 +7,18 @@
 	<title>rodriccrz</title>
 	<meta
 		name="description"
-		content="A display of the projects I made. Welcome to my portfolio. Rodrigo Agustin Cisterna Cruz. Front-end developer"
+		content="A display of the projects I, Rodrigo Cisterna, had made. Front-end developer"
 	/>
 </svelte:head>
 
-<section class="min-h-screen w-full m-auto mt-36 relative sm:mb-40 xl:mb-20">
-	<h1
-		class="hidden md:block text-2xl sm:text-3xl md:text-4xl lg:text-4xl w-[40%] fixed right-[-10%] top-[50%] text-center lg:text-center border-b border-b-slate-200 rotate-90 z-[100000000] text-slate-200"
-	>
-		PROJECTS.md
-	</h1>
+<section
+	class="h-auto w-full m-auto relative sm:mb-40 xl:mb-20"
+>
+	<h2 class="pagename">PROJECTS.md</h2>
 
 	<h1
-		class={`hidden md:block text-2xl sm:text-3xl md:text-4xl lg:text-4xl w-[20%] fixed  left-[0%] top-[13%] text-right border-b border-b-slate-200 z-[100000000] text-slate-200
+		class={`hidden md:block text-2xl sm:text-3xl md:text-4xl lg:text-4xl w-[20%] fixed left-[0%] top-[13%] text-right border-b 
+		border-b-slate-200 z-[100000000] text-slate-200
 		${$page.url.pathname === '/projects' && 'invisible'}
 		`}
 	>

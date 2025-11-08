@@ -17,23 +17,30 @@
 </script>
 
 <article
-	class="w-full sm:w-[90%] border-t border-slate-200 overflow-hidden transition-colors md:hover:motion-safe:animate-pulse py-8 max-h-[50vh] rounded-none"
+	class="w-full sm:w-[90%] min-h-[50vh] p-8
+	border-t border-cyber-deep
+	overflow-hidden transition-colors
+	hover:bg-gradient-cyberpunk-synthcore md:hover:motion-safe:animate-pulse"
 >
 	<a
-		class="flex flex-col sm:flex-row gap-10 sm:gap-0 justify-between group"
+		class="flex flex-col sm:flex-row gap-10 sm:gap-0 justify-between group py-5"
 		target={projectPreview.type === 'Design' ? '_blank' : ''}
 		on:click={updateProjectIndex}
 		href={projectPreview.link}
 	>
 		<h3
-			class="text-slate-300 group-hover:text-blue-700 text-2xl sm:text-lg md:text-xl lg:text-2xl xl:text-3xl tracking-[10px] flex-1 flex"
+			class="group-hover:text-cyber-blue-electric text-2xl sm:text-lg md:text-xl lg:text-2xl xl:text-3xl
+			tracking-[10px] flex-1 text-left"
 		>
 			{projectPreview.name}
 		</h3>
 
-		<picture class="flex-1">
+		<picture
+			class="flex-1 flex justify-end items-center overflow-hidden"
+		>
 			<img
-				class="w-full h-full object-cover md:group-hover:scale-125 transition-transform cursor-pointer grayscale-[0.5] md:group-hover:grayscale-0 md:group-hover:rotate-[-45deg]"
+				class="w-full object-contain md:group-hover:scale-110 transition-transform duration-500
+				grayscale-[0.3] md:group-hover:grayscale-0"
 				src={projectPreview.image}
 				alt={projectPreview.imageAlt}
 			/>

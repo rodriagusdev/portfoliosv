@@ -10,26 +10,22 @@
 </script>
 
 <section
-	class="flex flex-col base:flex-row gap-5 m-auto h-auto lg:h-[70vh] w-[90%] md:w-[50%] justify-center md:projectAnim mb-48 sm:mb-20 relative"
+	class=" mt-40 flex flex-col base:flex-row gap-5 m-auto h-full w-[90%] md:w-[50%] justify-center projectAnim mb-20 sm:mb-0"
 >
 	<article class="flex flex-col flex-1 gap-5">
 		<picture class="h-auto w-full">
 			<img
-				class="w-full h-full object-cover object-top"
+				class="w-full h-full object-cover"
 				loading="lazy"
 				src={cityhithair}
 				alt="Cemetery level."
 			/>
 		</picture>
 
-		<h2
-			class="h-auto text-xl sm:text-2xl text-center sm:text-left text-slate-200 tracking-[10px] border-b pb-5"
-		>
-			City of Hithair
-		</h2>
+		<h2>City of Hithair</h2>
 
 		<div class="flex justify-between z-50">
-			<h2 class="text-slate-300 text-lg">Overview</h2>
+			<h3>Overview</h3>
 			<div class="flex gap-2 items-center pr-2">
 				<div class="h-[10px] w-[10px] bg-orange-400 rounded-full" />
 				<div class="h-[10px] w-[10px] bg-green-400 rounded-full" />
@@ -37,13 +33,13 @@
 			</div>
 		</div>
 
-		<p class="text-sm mb-4 z-50">
-			Meant to be played in desktop. Hithair has turned to turmoil when a wanderer broke through the cemetery and down the
-			mausoleum. After his incursion beneath, sounds, screeches, and voices echoed underground. Find
-			the secret below the earth.
+		<p class="z-50">
+			Meant to be played in desktop. Hithair has turned to turmoil when a wanderer broke through the
+			cemetery and down the mausoleum. After his incursion beneath, sounds, screeches, and voices
+			echoed underground. Find the secret below the earth.
 		</p>
 
-		<ul class="project-list text-sm gap-3 flex flex-col z-50">
+		<ul class="project-list text-sm gap-3 flex flex-col z-50 mt-5">
 			<li>Two eligible heroes: Knight and Dark Wizard.</li>
 			<li>1v1 turn-based game.</li>
 			<li>Five levels.</li>
@@ -51,7 +47,7 @@
 	</article>
 
 	<div class="flex-1 flex flex-col-reverse base:flex-col gap-3 justify-between">
-		<div class="flex gap-3 flex-1">
+		<div class="flex-1 flex gap-3 ">
 			<picture class="flex-1">
 				<img
 					class="w-full h-[100px] rounded-full p-2 border border-zinc-800 object-cover"
@@ -84,48 +80,49 @@
 				/>
 			</picture>
 
-			<picture class="absolute top-[25%] right-[22%] lg:top-[15%] lg:right-[12%] z-10 opacity-50 base:opacity-100">
+			<picture class="h-[205px] w-[205px] fixed invisible lg:visible left-[4.5%] top-[20%]">
 				<img
-					class="w-full h-[25vh] base:h-[200px] rounded-full p-2 sm:border sm:border-zinc-800"
+					class="object-cover h-full w-full rounded-full p-2 border border-zinc-800"
+					loading="lazy"
 					src={nicolai}
-					alt="NPC Marion."
+					alt="Nicolai, the wanderer."
 				/>
 			</picture>
 		</div>
 
-		<picture class="base:self-center z-20">
+		<picture class="z-20">
 			<img
-				class="object-cover base:max-h-[200px]"
+				class="object-cover base:max-h-[200px] w-full"
 				src={cemetery}
 				loading="lazy"
 				alt="Preview of Cemetery level in City of Hithair."
 			/>
 		</picture>
 
-		<picture class="base:self-end">
+		<picture class="w-full">
 			<img
-				class="object-cover base:max-h-[200px]"
+				class="object-cover base:max-h-[200px] w-full"
 				loading="lazy"
 				src={battlecity}
 				alt="City of Hithair battle preview."
 			/>
 		</picture>
 
-		<ul class="project-techs justify-center md:justify-start items-center list-none p-0">
-			<li class="tech">React</li>
-			<li class="tech">Typescript</li>
-			<li class="tech">Zustand</li>
-			<li class="tech">SASS</li>
+		<ul class="project-techs">
+			<li class="tech"><div class="skill">React</div></li>
+			<li class="tech"><div class="skill">Typescript</div></li>
+			<li class="tech"><div class="skill">Zustand</div></li>
+			<li class="tech"><div class="skill">SASS</div></li>
 		</ul>
 
-		<div class="flex gap-2 items-center justify-center md:justify-start">
+		<div class="link-card">
 			<a
 				aria-label="To City of Hithair website"
 				href="https://cityofhithair.netlify.app/"
 				target="_blank">Play</a
 			>
 
-			<span class="w-6 border-b-2 border-gray-700" />
+			<span class="divider" />
 
 			<a
 				aria-label="To github repository"

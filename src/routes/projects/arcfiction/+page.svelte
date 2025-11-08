@@ -6,7 +6,7 @@
 </script>
 
 <section
-	class="flex flex-col base:flex-row gap-5 m-auto h-auto w-[90%] md:w-[50%] justify-center md:projectAnim mb-20 sm:mb-0"
+	class="mt-40 flex flex-col base:flex-row gap-5 m-auto h-full w-[90%] md:w-[50%] justify-center md:projectAnim mb-20 sm:mb-0"
 >
 	<article class="flex flex-col flex-1 gap-5">
 		<picture class="h-auto w-full">
@@ -17,15 +17,11 @@
 			/>
 		</picture>
 
-		<h2
-			class="h-auto text-xl sm:text-2xl text-center sm:text-left text-slate-200 tracking-[10px] border-b pb-5"
-		>
-			ARC Fiction
-		</h2>
+		<h2>ARC Fiction</h2>
 
 		<article class="w-full py-2 relative h-auto">
 			<div class="flex justify-between">
-				<h2 class="text-slate-300 text-lg">Overview</h2>
+				<h3>Overview</h3>
 
 				<div class="flex gap-2 items-center pr-2">
 					<div class="h-[10px] w-[10px] bg-orange-400 rounded-full" />
@@ -34,9 +30,9 @@
 				</div>
 			</div>
 
-			<p class="text-sm mb-4">Movie/tv show searcher that uses MovieDB API.</p>
+			<p>Movie/tv show searcher that uses MovieDB API.</p>
 
-			<ul class="project-list text-sm gap-3 flex flex-col">
+			<ul class="project-list text-sm gap-3 flex flex-col mt-5">
 				<li>
 					Auth implemented. Alternatively, you can enter the links in the form to test the app
 					without providing data.
@@ -73,26 +69,26 @@
 			/>
 		</picture>
 
-		<ul class="project-techs justify-center md:justify-start items-center list-none">
-			<li class="tech">NextJS</li>
+		<ul class="project-techs">
+			<li class="tech"><div class="skill">NextJS</div></li>
 
-			<li class="tech">Next-Auth</li>
+			<li class="tech"><div class="skill">Next-Auth</div></li>
 
-			<li class="tech">Typescript</li>
+			<li class="tech"><div class="skill">Typescript</div></li>
 
-			<li class="tech">TailwindCSS</li>
+			<li class="tech"><div class="skill">TailwindCSS</div></li>
 
-			<li class="tech">Prisma</li>
+			<li class="tech"><div class="skill">Prisma</div></li>
 
-			<li class="tech">MongoDB</li>
+			<li class="tech"><div class="skill">MongoDB</div></li>
 		</ul>
 
-		<div class="flex gap-2 items-center justify-center md:justify-start">
+		<div class="link-card">
 			<a aria-label="To ARCFiction website" href="https://arcfictionrem.vercel.app/" target="_blank"
 				>Website</a
 			>
 
-			<span class="w-6 border-b-2 border-gray-700" />
+			<span class="divider" />
 
 			<a
 				aria-label="To github repository"

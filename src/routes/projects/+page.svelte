@@ -1,67 +1,82 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { cognitiveDissabilityMode } from '../../store';
-	import { addBordersForCognitive } from '../components/AccessibilityMenu/cognitiveDissabilityMode';
 	import { projectsPreview } from '$lib/projectData/projectsPreview';
 	import ProjectPreview from '../components/ProjectPreview.svelte';
 
 	let scrollEnd = 0;
 	let windowHe = 0;
-	
-	onMount(() => {
-		if ($cognitiveDissabilityMode === true) addBordersForCognitive($cognitiveDissabilityMode);
-
-		if (document) {
-			document.addEventListener('wheel', () => {
-				windowHe = window.scrollY;
-				scrollEnd = document.body.scrollHeight - 963;
-			});
-
-			scrollEnd = document.body.scrollHeight - 963;
-
-			windowHe = window.scrollY;
-		}
-	});
-
 	let displayProjects = projectsPreview;
+
+	const updateScrollEnd = () => {
+		const content = document.querySelector('section');
+		if (content) {
+			const contentHeight = content.scrollHeight;
+			const viewportHeight = window.innerHeight;
+			scrollEnd = contentHeight - viewportHeight;
+		} else {
+			scrollEnd = document.body.scrollHeight - window.innerHeight;
+		}
+	};
+
+	const handleScroll = () => {
+		windowHe = window.scrollY;
+	};
 
 	const filterBy = (type: string) => {
 		if (type === '') displayProjects = projectsPreview;
 		else {
-			const filteredItems = projectsPreview.filter((news) => news.type === type);
-			displayProjects = filteredItems;
+			displayProjects = projectsPreview.filter((p) => p.type === type);
 		}
 
-		scrollEnd = document.body.scrollHeight - 963;
-		windowHe = window.scrollY;
+		setTimeout(updateScrollEnd, 100);
 	};
+
+	onMount(() => {
+		updateScrollEnd();
+
+		window.addEventListener('scroll', handleScroll);
+		window.addEventListener('resize', updateScrollEnd);
+
+		const observer = new MutationObserver(updateScrollEnd);
+		observer.observe(document.body, { childList: true, subtree: true });
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+			window.removeEventListener('resize', updateScrollEnd);
+			observer.disconnect();
+		};
+	});
 </script>
 
-<section class="w-full mb-40 xl:mb-20">
-
-	<!--This is the slider that shows the progress in the scroll-->
-	<div class="hidden md:block fixed right-10 w-[7px] rounded-md bg-white h-[200px]">
+<section class="w-full mt-40 mb-40 xl:mb-20">
+	<!--slider that shows the progress in the scroll-->
+	<div
+		class="hidden md:block fixed right-8 top-1/2 -translate-y-1/2 w-1 bg-cyber-purple/20 rounded-full h-80 overflow-hidden shadow-lg"
+	>
 		<div
-			style={`height: ${(windowHe / scrollEnd) * 100}%`}
-			class="absolute bg-zinc-700 z-10 w-[7px] rounded-md max-h-[200px] transition-all before:content-[''] before:absolute before:-bottom-1 before:h-[12px] before:bg-slate-300 before:z-[20] before:w-[12px] before:rounded-full before:-right-[0.20rem]"
+			style={`height: ${scrollEnd > 0 ? (windowHe / scrollEnd) * 100 : 0}%`}
+			class="absolute inset-x-0 top-0 w-full bg-cyber-sky rounded-full transition-all duration-300 ease-out
+           shadow-[0_0_12px_2px_rgba(76,76,255,0.6)]
+           before:content-[''] before:absolute before:bottom-0 before:left-1/2
+           before:-translate-x-1/2 before:w-3 before:h-3
+           before:bg-cyber-turquoise before:rounded-full
+           before:shadow-[0_0_16px_4px_rgba(0,255,231,0.8)] before:z-10"
 		/>
 	</div>
 
-	<div class="flex flex-col w-[95%] px-5 m-auto gap-5 border-l border-l-slate-200">
+	<div class="flex flex-col w-[95%] px-5 m-auto gap-5 border-l-2 border-l-cyber-purple">
 		<div class="w-full flex flex-col gap-3 mb-5">
-			<h2 class="h-auto text-xl sm:text-2xl md:text-3xl lg:text-4xl text-left text-slate-200">
-				Explore
-			</h2>
+			<h3 class="h-auto text-3xl">Explore</h3>
 
 			<a
 				class="text-left w-[50px]"
-				href="https://github.com/Rodrj1"
+				href="https://github.com/rodriagusdev"
 				target="_blank"
-				aria-label="See my Github Profile: Rodrj1">Github</a
+				aria-label="click to see my Github Profile: rodriagusdev">Github</a
 			>
 
 			<ul
-				class="flex w-[100%] m-auto gap-14 text-sm font-sans font-medium text-slate-200 spacing overflow-y-hidden overflow-x-scroll sm:overflow-hidden sm:justify-start list-none pl-9 pb-3"
+				class="flex w-[100%] m-auto gap-14 text-sm font-sans font-medium spacing overflow-y-hidden overflow-x-scroll sm:overflow-hidden sm:justify-start list-none pl-9 pb-3"
 			>
 				<li>
 					<button on:click={() => filterBy('')} class="filterButton relative">VIEW ALL</button>
