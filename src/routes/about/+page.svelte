@@ -39,7 +39,7 @@
 
 					<ul class="list-none p-0">
 						<li>Computer Technician (2011 - 2017): E.E.S.T.N°5.</li>
-						<li>System Analyst (2023 - 2026) DIPREGEP N°6169.</li>
+						<li>System Analyst (2023 - 2026) HILET.</li>
 					</ul>
 				</div>
 
