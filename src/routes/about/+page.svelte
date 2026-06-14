@@ -7,7 +7,7 @@
 </svelte:head>
 
 <section class="w-full md:projectAnim min-h-screen sm:mb-40 xl:mb-20">
-	<div class="w-[95%] px-5 m-auto mt-36 border-l-2 border-l-cyber-purple">
+	<div class="w-[95%] px-5 m-auto mt-5 lg:mt-36 border-l-2 border-l-cyber-purple">
 		<h2 class="pagename">ABOUT.md</h2>
 
 		<div class="flex flex-col gap-10 items-center sm:w-[50%] m-auto">
@@ -29,7 +29,7 @@
 				</a>
 
 				<span class="divider" />
-				
+
 				<a aria-label="To Resume PDF" href="/resume" target="_blank"> Resume </a>
 			</div>
 
@@ -43,6 +43,27 @@
 					</ul>
 				</div>
 
+				<div class="flex flex-col gap-2 pb-40 sm:pb-0">
+					<h3 class=" text-base">Experience</h3>
+
+					<p>
+						I develop modern web and desktop applications using React, TypeScript, .NET (C#), and
+						MySQL.
+					</p>
+
+					<div class="md:p-4">
+						<a href="https://www.hairandhealth.com" target="_blank" rel="noopener noreferrer">
+							Hair and Health
+						</a>
+						<ul class="project-list text-sm gap-3 flex flex-col mt-5">
+							<li>Reworked and modernized their website to improve user experience and performance.</li>
+							<li>Images for the site were also updated to enhance visual appeal.</li>
+							<li>Website responsive design from scratch.</li>
+							<li>Manually written content, both new and existing.</li>
+						</ul>
+					</div>
+				</div>
+
 				<div class="flex flex-col gap-2">
 					<h3>Languages</h3>
 
@@ -50,22 +71,6 @@
 						<li>Spanish</li>
 						<li>English</li>
 					</ul>
-				</div>
-
-				<div class="flex flex-col gap-2 pb-40 sm:pb-0">
-					<h3 class=" text-base">A bit of myself</h3>
-
-					<p>
-						I develop modern web and desktop applications using React, TypeScript, .NET (C#), and
-						MySQL.
-					</p>
-
-					<p>
-						My experience includes making responsive websites which load fast for the client, and
-						scalable applications applying POO principles.
-					</p>
-
-					<p>I don't have a preference, I am both comfortable working in front and back.</p>
 				</div>
 			</div>
 		</div>

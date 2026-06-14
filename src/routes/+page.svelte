@@ -7,7 +7,7 @@
 </svelte:head>
 
 <section class="w-full md:projectAnim">
-	<div class="w-[95%] m-auto mt-36 px-5 flex border-l-2 border-l-cyber-purple">
+	<div class="w-[95%] m-auto mt-5 lg:mt-36 px-5 flex border-l-2 border-l-cyber-purple">
 		<h2 class="pagename">HOME.md</h2>
 
 		<div class="flex flex-col gap-10 justify-start items-center m-auto sm:w-[50%] ">
@@ -17,7 +17,7 @@
 				<h3 class="text-center">Developer</h3>
 			</div>
 
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full mt-40">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full lg:mt-40">
 				<!-- Front -->
 				<section class="flex flex-col items-center md:items-start">
 					<h3 class="text-center w-full mb-5">Front</h3>

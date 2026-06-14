@@ -48,7 +48,7 @@
 	});
 </script>
 
-<section class="w-full mt-40 mb-40 xl:mb-20">
+<section class="w-full mt-5 lg:mt-40 mb-40 xl:mb-20">
 	<!--slider that shows the progress in the scroll-->
 	<div
 		class="hidden md:block fixed right-8 top-1/2 -translate-y-1/2 w-1 bg-cyber-purple/20 rounded-full h-80 overflow-hidden shadow-lg"

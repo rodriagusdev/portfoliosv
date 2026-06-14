@@ -38,7 +38,7 @@ body::-webkit-scrollbar {
 	}
 
 	a {
-		@apply relative inline-block text-cyber-turquoise font-slab tracking-widest text-sm
+		@apply relative inline-block text-cyber-turquoise font-slab tracking-widest text-sm w-auto
          no-underline transition-all outline-none focus:outline-none active:outline-none focus:ring-0 active:ring-0;
 	}
 
