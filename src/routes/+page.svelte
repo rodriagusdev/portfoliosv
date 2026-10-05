@@ -23,7 +23,7 @@
 </svelte:head>
 
 <section
-	class="w-full min-h-[calc(100vh-80px)] flex flex-col justify-start items-center pt-20 pb-28 md:pt-24 md:pb-20 px-4 sm:px-6 lg:px-8 projectAnim"
+	class="w-full min-h-[calc(100vh-80px)] flex flex-col justify-start items-center pt-20 pb-28 md:pt-24 md:pb-20 px-4 sm:px-6 lg:px-8"
 >
 	<div class="w-full max-w-5xl mx-auto flex flex-col gap-10 lg:gap-14">
 		<!-- =========================================================================
