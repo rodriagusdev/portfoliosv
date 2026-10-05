@@ -1,25 +1,55 @@
-<script>
-	import { page } from '$app/stores';
+<script lang="ts">
+	import { page } from '$app/state';
 
-	$: path = $page.url.pathname;
+	let path = $derived(page.url.pathname);
+
+	const projectTabs = [
+		{ name: 'ARCFiction', href: '/projects/arcfiction', tag: '01' },
+		{ name: 'Google Clone', href: '/projects/googleclone', tag: '02' },
+		{ name: 'An Ylthin', href: '/projects/anylthin', tag: '03' },
+		{ name: 'City of Hithair', href: '/projects/cityofhithair', tag: '04' }
+	];
 </script>
 
-<ul
-	class="flex list-none flex-wrap sm:flex-nowrap gap-4 xl:gap-40 w-full sm:w-[80%] m-auto mb-20 p-0 justify-center lg:justify-start absolute top-11 sm:left-[3.6%]"
+<nav
+	aria-label="Project Sub-navigation"
+	class="w-full bg-cyber-void/90 border-b border-cyber-border/80 backdrop-blur-md sticky top-14 sm:top-16 z-40 px-3 sm:px-6 py-2.5 flex items-center justify-between overflow-x-auto scrollbar-none"
 >
-	<li class={`${path === '/projects/anylthin' && '!border-b !border-sky-500'}`}>
-		<a href="/projects/anylthin" aria-label="Explore An-Ylthin game.">An Ylthin</a>
-	</li>
+	<div class="flex items-center gap-2 sm:gap-3">
+		<a
+			href="/projects"
+			class="font-mono text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded bg-cyber-card border border-cyber-border text-slate-300 hover:border-cyber-cyan hover:text-cyber-cyan transition-all flex items-center gap-1.5 after:hidden whitespace-nowrap"
+		>
+			<span>←</span>
+			<span class="hidden sm:inline">ALL PROJECTS</span>
+			<span class="sm:hidden">ARCHIVE</span>
+		</a>
 
-	<li class={`${path === '/projects/arcfiction' && '!border-b !border-sky-500'}`}>
-		<a href="/projects/arcfiction" aria-label="Explore ARCFiction website.">ARCFiction</a>
-	</li>
+		<div class="h-4 w-[1px] bg-cyber-border hidden sm:block"></div>
 
-	<li class={`${path === '/projects/cityofhithair' && '!border-b !border-sky-500'}`}>
-		<a href="/projects/cityofhithair" aria-label="Explore City of Hithair game">City of Hithair</a>
-	</li>
+		<ul class="flex items-center gap-1.5 sm:gap-2 list-none p-0 m-0">
+			{#each projectTabs as tab (tab.href)}
+				<li>
+					<a
+						href={tab.href}
+						class={`font-mono text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded border transition-all after:hidden flex items-center gap-1.5 whitespace-nowrap ${
+							path === tab.href
+								? 'bg-cyber-cyan text-black border-cyber-cyan shadow-glowCyan'
+								: 'bg-cyber-surface/80 text-slate-300 border-white/10 hover:border-cyber-cyan/40 hover:text-white'
+						}`}
+					>
+						<span class="text-[10px] opacity-70">#{tab.tag}</span>
+						<span>{tab.name}</span>
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</div>
 
-	<li class={`${path === '/projects/googleclone' && '!border-b !border-sky-500'}`}>
-		<a href="/projects/googleclone" aria-label="Explore Google Clone website.">Google Clone</a>
-	</li>
-</ul>
+	<div
+		class="hidden lg:flex items-center gap-2 font-mono text-[11px] text-cyber-cyan whitespace-nowrap pl-4"
+	>
+		<span class="w-1.5 h-1.5 rounded-full bg-cyber-cyan animate-ping"></span>
+		<span>SYS_SPEC // ACTIVE_NODE</span>
+	</div>
+</nav>
