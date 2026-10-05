@@ -199,18 +199,23 @@ h6 {
 }
 
 .animWelcome {
-	animation: animate 1.5s alternate forwards;
-	animation-delay: 0.3s;
+	animation: animateSplash 1.2s ease-in-out forwards;
+	animation-delay: 0.2s;
+	pointer-events: none;
 }
 
-@keyframes animate {
+@keyframes animateSplash {
 	0% {
-		opacity: 50;
+		opacity: 1;
+	}
+
+	70% {
+		opacity: 1;
 	}
 
 	100% {
 		opacity: 0;
-		z-index: -500000;
+		visibility: hidden;
 	}
 }
 
@@ -241,18 +246,18 @@ h6 {
 }
 
 .projectAnim {
-	animation: display 0.7s linear;
+	animation: fadeInEntrance 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@keyframes display {
+@keyframes fadeInEntrance {
 	0% {
 		opacity: 0;
-		transform: translateY(-100%);
+		transform: translateY(16px);
 	}
 
 	100% {
-		opacity: 100;
-		transform: translateY(0%);
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
 
