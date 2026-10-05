@@ -5,20 +5,10 @@
 	import KeyboardNavigation from '#lib/components/KeyboardNavigation.svelte';
 	import HudLightbox from '#lib/components/HudLightbox.svelte';
 	import { page } from '$app/state';
-	import { onMount } from 'svelte';
 
 	let { children } = $props();
 	let path = $derived(page.url.pathname);
 	let canonicalUrl = $derived(`https://rodriccrz.netlify.app${path}`);
-
-	let showSplash = $state(true);
-
-	onMount(() => {
-		const timer = setTimeout(() => {
-			showSplash = false;
-		}, 1500);
-		return () => clearTimeout(timer);
-	});
 </script>
 
 <svelte:head>
@@ -43,18 +33,6 @@
 	${path.includes('projects') ? 'bg-gradient-cyberpunk-alley90' : 'bg-gradient-cyberpunk-alley'}
 	`}
 >
-	{#if showSplash}
-		<div
-			class="fixed inset-0 h-screen w-screen z-[500000000] bg-gradient-cyberpunk-void flex justify-center items-center animWelcome pointer-events-none"
-		>
-			<h1
-				class="animTitle text-cyber-green-neon font-synth text-xl sm:text-2xl font-bold tracking-widest uppercase"
-			>
-				Opening Portfolio
-			</h1>
-		</div>
-	{/if}
-
 	<Header />
 
 	<main id="main-content" class="w-full">

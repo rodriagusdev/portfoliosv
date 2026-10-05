@@ -198,64 +198,16 @@ h6 {
 	isolation: isolate;
 }
 
-.animWelcome {
-	animation: animateSplash 1.2s ease-in-out forwards;
-	animation-delay: 0.2s;
-	pointer-events: none;
-}
-
-@keyframes animateSplash {
-	0% {
-		opacity: 1;
-	}
-
-	70% {
-		opacity: 1;
-	}
-
-	100% {
-		opacity: 0;
-		visibility: hidden;
-	}
-}
-
-.animTitle {
-	transition-duration: 500ms;
-	position: relative;
-	overflow: hidden;
-	width: auto;
-}
-
-.animTitle::before {
-	content: '';
-	background-image: conic-gradient(#454ebb 20deg, transparent 120deg);
-	width: 500px;
-	height: 100%;
-	position: absolute;
-	animation: rotate 1.5s linear forwards;
-}
-
-@keyframes rotate {
-	0% {
-		transform: translateX(-500px);
-	}
-
-	100% {
-		transform: translateX(300px);
-	}
-}
-
 .projectAnim {
-	animation: fadeInEntrance 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+	animation: fadeInEntrance 0.35s ease-out;
 }
 
 @keyframes fadeInEntrance {
-	0% {
-		opacity: 0;
-		transform: translateY(16px);
+	from {
+		opacity: 0.9;
+		transform: translateY(8px);
 	}
-
-	100% {
+	to {
 		opacity: 1;
 		transform: translateY(0);
 	}
@@ -297,10 +249,7 @@ h6 {
 }
 
 @media (prefers-reduced-motion) {
-	.animTitle::before {
-		animation: rotate 0s linear forwards;
-	}
 	.projectAnim {
-		animation: display 0s linear;
+		animation: none;
 	}
 }
